@@ -8,26 +8,27 @@
 
 //
 // Summary :
-//  This transform maps ACES onto a Rec.2020 ST.2084 HDR display calibrated 
+//  This transform maps ACES onto a Rec.2020 HLG HDR display calibrated 
 //  to a D65 white point at 1000 cd/m^2. The assumed observer adapted white is 
-//  D65, and the viewing environment is that of a dark surround. Mid-gray
-//  luminance is targeted at 15 cd/m^2.
-//
+//  D65, and the viewing environment is that of a dark or dim surround (see NOTE
+//  below). Mid-gray luminance is targeted at 15 cd/m^2.
+// 
 // NOTE :
 //  The parameterized "Output Transform" function used as basis for this 
 //  transform includes a parameter labeled "SURROUND". However, as noted in 
 //  "ACESlib.OutputTransforms.ctl", this sub-module is currently a "placeholder"
-//  and as such currently only supports a rendering intended for dark surround 
+//  and as such currently only supports a rendering designed for dark surround 
 //  environments. While it is planned for future releases to fully activate the 
 //  this module and provide adjustment for dark/dim/normal surrounds, setting 
 //  SURROUND equal to either dim or normal will have no effect at this time.
 //  
-//  That being said, these Output Transforms have been used successfully on
-//  major feature and television projects when mastering for home HDR where a 
-//  dim surround environment is assumed. Based on that, these transforms are 
-//  considered adequate for use for dim surround mastering, although, as always,
-//  creative adjustments to contrast and saturation may be desirable and should
-//  be saved as a "trim pass."
+//  Although designed primarily for a dark surround environment, it is important
+//  to note that these Output Transforms have been used successfully on major 
+//  feature and television projects when mastering for home HDR where a dim 
+//  surround environment is assumed. Based on those successes, these transforms 
+//  are considered adequate for use for dim surround mastering as well as dark. 
+//  As always, creative adjustments to contrast and saturation may be desirable 
+//  and should be saved as a "trim pass."
 //
 // Device Primaries : 
 //  Primaries are those specified in Rec. ITU-R BT.2020
@@ -49,7 +50,10 @@
 //
 // Viewing Environment:
 //  Environment specified in SMPTE RP 431-2-2007
-//
+//  Also suitable for use in a viewing environment more typical of video 
+//  mastering (aka "dim" surround)
+//  See NOTE above.
+//  
 
 
 
